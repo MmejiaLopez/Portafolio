@@ -1,0 +1,289 @@
+:root {
+    --blanco: #ffffff; /*cuando se define un custompropety tu le das tel nobmre*/
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0087a7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+} /*seudoelementos elementos que no existen en el codigo html*/
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* Hack para Box Model **/
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-size: 16px;/* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.titulo span{
+    font-size: 2rem;
+
+}
+
+.contenedor{
+    max-width: 120rem; /* aqui toma 1200 maximos si no el 100% del div*/
+    margin: 0 auto; /* primero es top y buttom y el segundo es derecha e izquierda*/
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size:  2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {     
+    .boton {
+        width: auto;
+    }
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+   
+    /*
+    flex-direction: column; sirve para que vaya en dirección hacia abajo
+    align-items: center; no sirve que si esta en column pero si pones flex-end y otras propiedades si
+    */
+}
+
+
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none; /*line-through para linia enmedio*/
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover { /*Acción que se realiza cuando se selecciona un enlace Hover.*/
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.hero {
+    background-image: url(/img/hero.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    /*background-color: rgba(0, 0, 0, .7);*/ /**Anterior **/
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/**Servicios**/
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /*
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 200px 800px;
+        */
+        /*grid: 200px 800px / 300px 300px; /*igual al primer comentado*/
+        /*grid-template-columns: 33.3% 33.3% 33.3%; /*lo divide en tres columnas*/
+        /*grid-template-columns: 1fr 1fr 1fr;*/
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.5rem; /*crea una separación en grid dependiendo el pixelaje que se le asigne*/
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: 400;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: justify;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Contacto*/
+.formulario {
+    background-color: var(--gris);
+    width: min( 60rem, 100%); /*utiliza el valor más pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem ;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem ;
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4) {   /*selecciona el campo dependiendo el arreglo*/
+        grid-column: 1/3;
+    }
+}
+
+/*footer*/
+.footer{
+    text-align: center;
+}
+/*Scrool Snap*/
+.servicios, .navegacion-principal, .formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
